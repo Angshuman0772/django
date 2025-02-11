@@ -1,9 +1,16 @@
 {% extends "blog/base.html" %} <!-- Extends base.html-->
 {% block content %} <!-- Defines a block named content -->
-{% for post in posts %} <!--Jinja template tag that allows us to loop through the posts list -->
-<h1>{{ post.title }}</h1> <!--Jinja template tag dynamically displaying the title of each post from the posts list -->
-<p>By {{ post.author }} on {{ post.date_posted }}</p>
-<p>{{ post.content }}</p>
-{% endfor %}
+    {% for post in posts %} <!--Jinja template tag that allows us to loop through the posts list -->
+        <article class="media content-section">
+            <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="#">{{ post.author }}</a>
+                <small class="text-muted">{{ post.date_posted }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+            </div>
+        </article>
+    {% endfor %}
 {% endblock content %} <!-- Ends the block content -->
 # Only keeping unique code that is not part of the base.html template
