@@ -10,4 +10,4 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):  #dunder method
-        return self.title #return title of post
+        return self.title #return title of post in shell 
