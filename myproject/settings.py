@@ -127,4 +127,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4' 
+LOGIN_REDIRECT_URL = 'blog-home' # redirect to home page after login
+LOGIN_URL = 'login' # redirect to login page if user is not logged in when trying to access a protected page

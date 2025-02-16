@@ -21,8 +21,9 @@ from django.contrib.auth import views as auth_views  # import views module from 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/', user_views.register, name='register'),  # register path for register view
-    path('login/', auth_views.LoginView.as_view, name='login'),  # login path for login view
-    path('logout/', auth_views.LogoutView.as_view, name='logout'), # logout path for logout view
+    path('register/', user_views.register, name='register'), # register path for register view
+    path('profile/', user_views.profile, name='profile'), 
+    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),  # login path for login view
+    path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'), # logout path for logout view
     path('', include('blog.urls')),  # include blog.urls module and empty path for home page means that i can access blog.urls by going to localhost:8000/
 ]
